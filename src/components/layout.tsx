@@ -66,6 +66,8 @@ const Layout = ({ location, title, children }: Props) => {
       }}
     >
       <header>{header}</header>
+      <Link to="/rick-and-morty">Rick and Morth</Link>
+      <Link to="/rick-and-morty-2">Rick and Morth - cached</Link>
       <main>{children}</main>
       <footer>
         © {new Date().getFullYear()}, Built with

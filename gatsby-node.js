@@ -48,6 +48,15 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     });
   });
+
+  // New Page
+  const rickAndMorth = path.resolve(`./src/templates/template-rick-and-morty.tsx`);
+  createPage({
+    path: 'rick-and-morty-22',
+    component: rickAndMorth,
+  });
+
+
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

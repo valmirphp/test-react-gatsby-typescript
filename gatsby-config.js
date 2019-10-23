@@ -77,6 +77,14 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-graphql',
+      options: {
+        typeName: 'RMAPI',
+        fieldName: 'rickAndMorty',
+        url: 'https://rickandmortyapi.com/graphql',
+      },
+    },
+    {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
