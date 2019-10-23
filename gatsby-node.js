@@ -50,20 +50,20 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
   // New Page
-  const rickAndMorth = path.resolve(`./src/templates/template-rick-and-morty.tsx`);
+  const rickAndMorth = path.resolve(
+    `./src/templates/template-rick-and-morty.tsx`
+  );
   createPage({
-    path: 'rick-and-morty-22',
+    path: 'memes-and-morty-22',
     component: rickAndMorth,
   });
-
-
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
   if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode });
+    const value = 'post' + createFilePath({ node, getNode });
     createNodeField({
       name: `slug`,
       node,

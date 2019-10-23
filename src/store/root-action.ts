@@ -1,9 +1,11 @@
 import { createStandardAction } from 'typesafe-actions';
 import * as todosActions from '../features/todos/actions';
+import * as memesActions from '../features/memes/actions';
 
 export const emptyAction = createStandardAction('EMPTY_ACTION')();
 
 export default {
   system: { noAction: emptyAction },
-  todos: todosActions
+  todos: todosActions,
+  memes: memesActions,
 };
