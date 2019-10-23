@@ -1,4 +1,5 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./src",
     "outDir": "dist/", // target for compiled files
@@ -13,7 +14,7 @@
     "importHelpers": true, // importing transpilation helpers from tslib
     "noEmitHelpers": true, // disable inline transpilation helpers in each file
     "jsx": "react", // preserving JSX
-    "lib": ["dom", "dom.iterable", "esnext"], // you will need to include polyfills for es2017 manually
+    "lib": ["dom", "dom.iterable", "esnext", "es2015"], // you will need to include polyfills for es2017 manually
     "skipLibCheck": true,
     "types": ["jest", "node"], // which global types to use
     "target": "es5", // "es2015" for ES6+ engines
@@ -25,10 +26,12 @@
     "noEmitOnError": false,
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "strict": true,
     "pretty": true,
     "removeComments": true,
     "sourceMap": true
   },
+  "include": ["./src/**/*"],
   "exclude": ["node_modules", "public", ".cache"]
 }

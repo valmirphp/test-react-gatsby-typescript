@@ -5,6 +5,7 @@ import Bio from '../components/bio';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { rhythm } from '../utils/typography';
+import Demo from '../components/Demo';
 
 interface Props {
   location: Location;
@@ -32,6 +33,7 @@ const BlogIndex = ({ data, location }: Props) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       <h2>{title}</h2>
+      <Demo />
       <Bio />
       {posts.map(({ node }: any) => {
         const title = node.frontmatter.title || node.fields.slug;
