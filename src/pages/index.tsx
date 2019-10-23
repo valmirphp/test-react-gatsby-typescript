@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, graphql } from 'gatsby';
 
 import Bio from '../components/bio';
@@ -21,10 +21,17 @@ interface Props {
 const BlogIndex = ({ data, location }: Props) => {
   const siteTitle = data.site.siteMetadata.title;
   const posts = data.allMarkdownRemark.edges;
+  const [title, setTitle] = useState('INIT AAA');
+
+  useEffect(() => {
+    // window.alert("This won't break the build");
+    setTitle('AA FUUU');
+  });
 
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
+      <h2>{title}</h2>
       <Bio />
       {posts.map(({ node }: any) => {
         const title = node.frontmatter.title || node.fields.slug;
